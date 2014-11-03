@@ -27,6 +27,9 @@ import android.widget.Toast;
 
 public class BlueChat_ProfileBuilder extends ActionBarActivity {
 
+	/* name, description, location of image */
+	/* default image is stored in res/drawable */
+	
 	private static Bitmap Image =null;
 	private static Bitmap rotateImage = null;
 	private ImageView imageView;

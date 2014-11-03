@@ -64,6 +64,7 @@ public final class R {
         public static final int aboutme=0x7f050010;
         public static final int action_settings=0x7f050012;
         public static final int app_name=0x7f050000;
+        public static final int authority=0x7f050013;
         public static final int bt_not_enabled_leaving=0x7f050003;
         public static final int button_scan=0x7f05000d;
         /**  Options Menu 
