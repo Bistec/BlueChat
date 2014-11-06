@@ -350,12 +350,10 @@ public class BluetoothChat extends Activity {
                     //View profile in activity and if friend is accepted store in content provider and send sProfile|
                 	System.out.printf("Profile is here");
                 	
-                	/** 
-                	 * @Todo: Double Check this forloop.  Right now, it only works with the Toast.
-                	 * Do we want it to work with all the code down to the startActivity?  
-                	 */
-                	for (int i = 0; i < val.length; ++i)
-                	Toast.makeText(getApplicationContext(), val[i], Toast.LENGTH_LONG).show();
+                	
+                	for (int i = 0; i < val.length; ++i){
+                		Toast.makeText(getApplicationContext(), val[i], Toast.LENGTH_LONG).show();
+                	}
                 	
                 	Intent intent = new Intent(getApplicationContext(), BlueChat_ProfileView.class);
                 	intent.putExtra("Description",val[1] );
