@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -35,9 +34,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="15dp"
+        android:adjustViewBounds="false"
         android:clickable="true"
         android:cropToPadding="true"
+        android:maxHeight="20dp"
+        android:maxWidth="20dp"
         android:onClick="onClick"
+        android:scaleType="fitStart"
         android:src="@drawable/images" />
 
     <TextView
@@ -47,7 +50,7 @@
         android:layout_alignLeft="@+id/imageView1"
         android:layout_below="@+id/imageView1"
         android:layout_marginTop="43dp"
-        android:text="@string/aboutme"
+        android:text="aboutme"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
@@ -67,7 +70,7 @@
         android:layout_alignLeft="@+id/editText1"
         android:layout_alignParentBottom="true"
         android:onClick="onClick2"
-        android:text="@string/submit" />
+        android:text="submit" />
 
     <TextView
         android:id="@+id/textView3"
