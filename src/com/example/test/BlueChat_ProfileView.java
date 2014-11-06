@@ -25,6 +25,7 @@ public class BlueChat_ProfileView extends Activity {
 		if (extras != null) {
 		    Name = extras.getString("Name");
 		    Description=extras.getString("Description");
+		    
 		    // and get whatever type user account id is
 		    NameTxt = (TextView)findViewById(R.id.textView1);
 		    DescriptionTxt = (TextView)findViewById(R.id.textView2);
