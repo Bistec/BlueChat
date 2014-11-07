@@ -68,12 +68,13 @@ public class LocalStorage extends SQLiteOpenHelper {
 
 	}
 
-	public long createProfile(String name, String number, String BTName) {
+	public long createProfile(String name, String number,int picture, String BTName) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
 		values.put(key_name, name);
 		values.put(key_number, number);
+		values.put(key_picture,picture);
 		values.put(key_BTName, BTName);
 
 		// insert row
@@ -97,6 +98,7 @@ public class LocalStorage extends SQLiteOpenHelper {
 		p.setName(c.getString(c.getColumnIndex(key_name)));
 		p.setNumber(c.getString(c.getColumnIndex(key_number)));
 		p.setBTName(c.getString(c.getColumnIndex(key_BTName)));
+	    p.setPicture(c.getString(c.getColumnIndex(key_picture)));
 
 		return p;
 	}
@@ -115,6 +117,7 @@ public class LocalStorage extends SQLiteOpenHelper {
 				p.setName(c.getString(c.getColumnIndex(key_name)));
 				p.setNumber(c.getString(c.getColumnIndex(key_number)));
 				p.setBTName(c.getString(c.getColumnIndex(key_BTName)));
+				p.setPicture(c.getString(c.getColumnIndex(key_picture)));
 
 				// adding to todo list
 				profiles.add(p);
@@ -125,13 +128,14 @@ public class LocalStorage extends SQLiteOpenHelper {
 	}
 
 	public int updateProfile(long profile_id, String name, String number,
-			String BTName) {
+			String BTName, String Photo) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
 		values.put(key_name, name);
 		values.put(key_number, number);
 		values.put(key_BTName, BTName);
+		values.put(key_picture, Photo);
 
 		return db.update(TABLE_PROFILES, values, KEY_ID + " =?",
 				new String[] { String.valueOf(profile_id) });

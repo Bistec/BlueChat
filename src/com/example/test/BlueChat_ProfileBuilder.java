@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -52,35 +53,57 @@ public class BlueChat_ProfileBuilder extends Activity {
         description= (EditText) findViewById(R.id.editText1);
         name = (EditText) findViewById(R.id.editText2);
 	}	
-
+@Override
+protected void onResume()
+{
+	super.onResume();
+	SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+	
+	int i = prefs.getInt("ProfilePhoto",-1);
+if(i==0)
+imageView.setImageResource(R.drawable.images);
+else if(i==1)
+imageView.setImageResource(R.drawable.one);
+else if(i==2)
+imageView.setImageResource(R.drawable.two);
+else if(i==3)
+imageView.setImageResource(R.drawable.three);
+else if(i==4)
+imageView.setImageResource(R.drawable.four);
+else if(i==5)
+imageView.setImageResource(R.drawable.five);
+else if(i==6)
+imageView.setImageResource(R.drawable.six);
+}
+	
 	//Click function for profile image
 	public void onClick(View v) {
-		Intent i = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-		 startActivityForResult(i, RESULT_GALLERY);
-		 
+		Intent i = new Intent(getApplicationContext(), AvatarPicker.class);
+		 startActivity(i);
+		 	//Toast toast = Toast.makeText(getApplicationContext(), "this", Toast.LENGTH_SHORT);
+	    	
+				 
 		 
 		}
 	
 	public void onClick2(View v)
 	{
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		SharedPreferences.Editor editor = prefs.edit();
 		editor.putString("Name",name.getText().toString());
-		editor.commit();
-		editor.putString("ProfileURI",picturePath);
 		editor.commit();
 		editor.putString("Description", description.getText().toString());
 		editor.commit();
 		
 		//Remove this to see printer
-		Intent intent = new Intent(BlueChat_ProfileBuilder.this,BluetoothChat.class);
+		Intent intent = new Intent(getApplicationContext(),BluetoothChat.class);
     	startActivity(intent);
-		
+   
 	}
 	
 	public void print(View v)
 	{
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		
 		String name = prefs.getString("Description","No Name");
 		name+="\n"+prefs.getString("Name","No Name");

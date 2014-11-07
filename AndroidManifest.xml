@@ -17,6 +17,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <activity android:name="BluetoothChat">
             
         </activity>
@@ -27,6 +28,8 @@
             </intent-filter></activity>
         <activity android:name="BlueChat_ProfileBuilder"></activity>
         <activity android:name="BlueChat_ProfileView"></activity>
+        <activity android:name="AvatarPicker"></activity>
+        
     </application>
 
 </manifest>

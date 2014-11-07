@@ -31,4 +31,6 @@
     <string name="connect">Connect a device</string>
     <string name="discoverable">Discoverable?</string>
     <string name="SendProfile">Send Profile</string>
+     <color name="black">#000000</color>
+    
 </resources>	

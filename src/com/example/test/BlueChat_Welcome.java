@@ -19,11 +19,9 @@ public class BlueChat_Welcome extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
         setContentView(R.layout.activity_blue_chat__welcome);
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/Prisma.otf");
         TextView BlueChat = (TextView) findViewById(R.id.textView1);
-        
         BlueChat.setTypeface(tf);
         BlueChat.setText("Blue Chat");
         BlueChat.setTextSize(TypedValue.COMPLEX_UNIT_SP,50);
