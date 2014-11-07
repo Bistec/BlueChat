@@ -24,11 +24,12 @@
         <activity android:name="DeviceListActivity"></activity>
         <activity android:name="BlueChat_Welcome"><intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" /> 
-            </intent-filter></activity>
+                <category android:name="android.intent.category.LAUNCHER" /> 
+                </intent-filter></activity>
         <activity android:name="BlueChat_ProfileBuilder"></activity>
         <activity android:name="BlueChat_ProfileView"></activity>
         <activity android:name="AvatarPicker"></activity>
+        <provider android:name="LocalStorage" android:authorities="@string/authority"></provider>
         
     </application>
 

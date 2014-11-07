@@ -32,5 +32,6 @@
     <string name="discoverable">Discoverable?</string>
     <string name="SendProfile">Send Profile</string>
      <color name="black">#000000</color>
+     <string name="authority">com.example.test.provider</string>
     
 </resources>	
